@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+// Route::get('/posts', function () {
+//     $post = Post::create([
+        
+//         'title' => 'my-first-post',
+//         'slug' => 'my-first-post'   
+//     ]);
+//     return $post;
+// });
+
+Route::resource('posts', 'PostController');
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
