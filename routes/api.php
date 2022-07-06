@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,18 @@ use App\Models\Post;
 // });
 
 Route::resource('posts', 'PostController');
+Route::resource('users', 'UserController');
 
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+//Users
+
+Route::prefix('/user')->group ( function() {
+    Route::post('/login', 'LoginController@login');
+    Route::middleware('auth:api')->get('/users', 'UserController@index');
+    
 });
+
