@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Personal Projects -- Backend 
+## Laravel_Backend / API 
 
 The API and DB layers are managed within a Laravel backend framework, which includes models and controllers for Users and Posts. The API is authenticated using Laravel Passport and basic scopes implemented so that I can general and admin users for the application. 
 All endpoints have been tested in Insomnia and currently the backend is using SQLite until the view layer is completed.
